@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crysworks Studio | Art Gallery</title>
+    <style>
+        /* Modern Reset & Variables */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        :root {
+            --bg-color: #fcfbf9;
+            --text-color: #1a1a1a;
+            --accent-color: #7a6b58;
+            --light-gray: #e6e4e0;
+            --font-serif: 'Playfair Display', Georgia, serif;
+            --font-sans: 'Inter', Helvetica, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--font-sans);
+            line-height: 1.6;
+        }
+
+        /* Header / Navigation */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem 4%;
+            border-bottom: 1px solid var(--light-gray);
+        }
+        .logo {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        nav a {
+            text-decoration: none;
+            color: var(--text-color);
+            margin-left: 2rem;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 8rem 4% 6rem 4%;
+            max-width: 800px;
+        }
+        .hero h1 {
+            font-family: var(--font-serif);
+            font-size: 3.5rem;
+            font-weight: 400;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            color: #555;
+            max-width: 600px;
+        }
+
+        /* Gallery Grid */
+        .gallery-container {
+            padding: 2rem 4% 6rem 4%;
+        }
+        .section-title {
+            font-family: var(--font-serif);
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+        .exhibit-card {
+            overflow: hidden;
+            cursor: pointer;
+        }
+        .image-wrapper {
+            background-color: var(--light-gray);
+            aspect-ratio: 4 / 5;
+            overflow: hidden;
+            position: relative;
+            margin-bottom: 1rem;
+        }
+        /* Placeholder styling for images */
+        .image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+        .exhibit-card:hover img {
+            transform: scale(1.03);
+        }
+        .exhibit-info h3 {
+            font-family: var(--font-serif);
+            font-size: 1.2rem;
+            font-weight: 400;
+            margin-bottom: 0.25rem;
+        }
+        .exhibit-info p {
+            font-size: 0.85rem;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* About / Info Section */
+        .about-section {
+            background-color: #1a1a1a;
+            color: #fff;
+            padding: 6rem 4%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 4rem;
+        }
+        .about-section h2 {
+            font-family: var(--font-serif);
+            font-size: 2.5rem;
+            font-weight: 400;
+        }
+        .about-text p {
+            margin-bottom: 1.5rem;
+            color: #ccc;
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem 4%;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #777;
+            border-top: 1px solid var(--light-gray);
+            background-color: var(--bg-color);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            header { padding: 1.5rem 4%; }
+            nav { display: none; } /* Simplified for placeholder mobile view */
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">THE CANVAS ROOM</div>
+        <nav>
+            <a href="#exhibitions">Exhibitions</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Curating contemporary perspectives & timeless expressions.</h1>
+            <p>Welcome to The Canvas Room. A minimalist space dedicated to showcasing emerging digital and classical fine artists from around the world.</p>
+        </section>
+
+        <section id="exhibitions" class="gallery-container">
+            <h2 class="section-title">Current Exhibition</h2>
+            <div class="grid">
+                
+                <div class="exhibit-card">
+                    <div class="image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?q=80&w=600&auto=format&fit=crop" alt="Abstract painting">
+                    </div>
+                    <div class="exhibit-info">
+                        <h3>Echoes of Silence</h3>
+                        <p>Elena Rostova &bull; Mixed Media</p>
+                    </div>
+                </div>
+
+                <div class="exhibit-card">
+                    <div class="image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?q=80&w=600&auto=format&fit=crop" alt="Fluid art">
+                    </div>
+                    <div class="exhibit-info">
+                        <h3>Fluid Dynamics</h3>
+                        <p>Marcus Vance &bull; Digital Render</p>
+                    </div>
+                </div>
+
+                <div class="exhibit-card">
+                    <div class="image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1605721911519-3dfeb3be25e7?q=80&w=600&auto=format&fit=crop" alt="Modern art splash">
+                    </div>
+                    <div class="exhibit-info">
+                        <h3>Chromatic Shift</h3>
+                        <p>Sora Takahashi &bull; Acrylic on Canvas</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="about" class="about-section">
+            <div>
+                <h2>Visit the Gallery</h2>
+            </div>
+            <div class="about-text">
+                <p>Located in the heart of the arts district, our gallery provides a serene environment specifically designed to create an intimate dialogue between the viewer and the artwork.</p>
+                <p><strong>Hours:</strong> Tuesday &ndash; Sunday, 11:00 AM &ndash; 7:00 PM</p>
+                <p><strong>Location:</strong> 404 Atelier Blvd, Creative Quarter</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 The Canvas Room. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
